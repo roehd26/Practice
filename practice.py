@@ -1,11 +1,10 @@
-
 # Git에 추가 하려면 
 
 # git init - 초기화, 프로젝트 처음에만 한번
 # git add . - 추가할 파일 더하기 - 파일이 하나라면 . 대신에 파일명 넣기
 # git status - 상태확인
 # git commit -m "first/second commit" - Rivision/history 관리
-# git remote add origin https://github.com/roehd26/Practice.git - github repository와 내 로컬 프로젝트와 연결
+# git remote add origin https://github.com/roehd26/Practice.git - github repository와 내 로컬 프로젝트와 연결 (Github에서 복사해서 붙여와야 함)
 # git remote -v - 잘 연결 되었는지 확인
 # git push origin master - Github로 올리기 (master 자리에는 branch 이름이 들어가면 됨, branch 이름이 main이라 하면 git push origin main이라고 써야함)
 
@@ -155,8 +154,8 @@
 
 # 랜덤 함수 ()
 
-from ipaddress import NetmaskValueError
-from random import * # random 라이브러리에서 모든 걸 사용한다.
+# from ipaddress import NetmaskValueError
+# from random import * # random 라이브러리에서 모든 걸 사용한다.
 
 # print(random()) # 0.0 ~ 1.0 미만의 임의의 값을 생성
 # print(random() * 10) # 0.0 ~ 10.0 미만의 임의의 값을 생성
@@ -240,7 +239,7 @@ from random import * # random 라이브러리에서 모든 걸 사용한다.
 
 # 문자열 처리 함수 () (55:00)
 
-python = "Python is Amazing"
+# python = "Python is Amazing"
 # print(python.lower()) # 모든 문자가 소문자로
 # print(python.upper()) # 모든 문자가 대문자로
 # print(python[0].isupper()) #python의 0번째 문자가 대문자 인지 True/False
@@ -370,7 +369,7 @@ python = "Python is Amazing"
 # subway.insert(1, "정형돈") # insert (추가할 위치, "추가할 이름")
 # print(subway)
 
-# #지하털에 있는 사람을 한 명씩 뒤에서 꺼냄
+# #지하철에 있는 사람을 한 명씩 뒤에서 꺼냄
 # print(subway.pop())
 # print(subway)
 
@@ -409,7 +408,7 @@ python = "Python is Amazing"
 
 # 사전 자료형 () (1:31:40)
 
-# cabinet = {3:"유재석", 100:"김태호"} 
+# cabinet = {3:"유재석", 100:"김태호"} # 예) 목욕탕에 손님이 와서 cabinet의 key를 사용
 # print(cabinet[3]) # 출력 하려면 키값을 넣으면 됨
 # print(cabinet[100])
 # print(cabinet.get(3))
@@ -422,8 +421,152 @@ python = "Python is Amazing"
 # print(3 in cabinet) # True 사전 자료형 안에 값이 있는지 확인하는 기능
 # print(5 in cabinet) # False
 
-cabinet = {"A-3":"유재석", "B-100":"김태호"} # Key를 정수형이 아닌 srting으로 사용 해도 됨
-print(cabinet["A-3"])
-print(cabinet["B-100"])
+# cabinet = {"A-3":"유재석", "B-100":"김태호"} # Key를 정수형이 아닌 srting으로 사용 해도 됨
+# print(cabinet["A-3"])
+# print(cabinet["B-100"])
 
+# # 새 손님 - 값을 업데이트 하거나 추가
+# print(cabinet)
+# cabinet["A-3"] = "김종국" # 기존의 값은 지워지고 새로운 값이 들어감, 유재석 -> 김종국
+# cabinet["C-20"] = "조세호" # 새로운 Key와 값이 추가
+# print(cabinet)
 
+# # 간 손님 - key를 삭제
+# del cabinet["A-3"]
+# print(cabinet)
+
+# # key들만 출력
+# print(cabinet.keys())
+
+# # value들만 출력
+# print(cabinet. values())
+
+# # ket, value 쌍으로 출력
+# print(cabinet.items())
+
+# # 목욕탕 폐점
+# cabinet.clear()
+# print(cabinet)
+
+# 튜플 () (1:40:46) - 리스트와 다르게 내용을 변경이나 추가를 할 수 없지만, 속도가 리스틉 보다 빠르다
+
+# 돈가스 집
+# menu = ("돈가스", "치즈가스")
+# print(menu[0])
+# print(menu[1])
+
+# menu.add("생선가스") - error 발생 - AttributeError: 'tuple' object has no attribute 'add'
+
+# name = "김종국"
+# age = 20
+# hobby = "코딩"
+# print(name, age, hobby)
+
+# (name, age, hobby) = ("김종국", 20, "코딩") # 튜플 형식으로 변수 선언
+# print(name, age, hobby)
+
+# 세트 () (1:43:24)
+
+# 집합 (set)
+# 중복 안됨, 순서 없음
+
+# my_set = {1,2,3,3,3} # 중괄호는 사전에서도 썼었지만, key와 value를 같이 썼음, 세트에서는 그냥 값만 나열 하면 됨
+# print(my_set) #세트는 중복을 허용하지 않기 때문에 뒤에 반복 되는 내용은 무시
+
+# java = {"유재석", "김태호","양세형"} # java를 할 줄 아는 개발자
+# python = set(["유재석", "박명수"]) # python을 할 줄 아는 개발자
+
+# # 교집합 (java와 python을 모두 할 수 있는 개발자)
+# print(java & python) # 유재석만 출력
+# print(java.intersection(python))
+
+# # 합집합 (java 할 수 있거나 python을 할 수 있는 개발자)
+# print(java | python)
+# print(java.union(python)) # 순서는 보장 되지 않음
+
+# # 차집합 (java는 할 수 있지만 python은 할 줄 모르는 개발자)
+# print(java - python)
+# print(java.difference(python))
+
+# # python 할 줄 아는 사람이 늘어남
+# python.add("김태호")
+# print(python)
+
+# # java 를 잊었어요
+# java.remove("김태호")
+# print(java)
+
+# 자료구조의 변경 () (1:48:44)
+
+# 커피숍 메뉴에 대해
+
+# menu = {"커피", "우유", "주스"}
+# print(menu, type(menu))  # {'커피', '주스', '우유'} <class 'set'>
+
+# menu = list(menu)
+# print(menu, type(menu))  # ['커피', '주스', '우유'] <class 'list'>
+
+# menu = tuple(menu)
+# print(menu, type(menu))  # ('커피', '주스', '우유') <class 'tuple'>
+
+# menu = set(menu)
+# print(menu, type(menu))  # {'커피', '주스', '우유'} <class 'set'>
+
+# 퀴즈 #4 (1:50:47)
+
+# Quiz) 당신의 학교에서는 파이썬 코딩 대회를 주최합니다.
+# 참석률을 높이기 위해 댓글 이벤트를 진행하기로 하였습니다.
+# 댓글 작성자들 중에 추첨을 통해 1명은 치킨, 3명은 커피 쿠폰을 받게 됩니다.
+# 추첨 프로그램을 작성하시오.
+
+# 조건1: 편의상 댓글은 20명이 작성하였고 아이디는 1~20 이라고 가정
+# 조건2: 댓글 내용과 상관없이 무작위로 추첨하되 중복 불가
+# 조건3: random 모듈의 shuffle과 sample을 활용
+
+# (출력 예제)
+# -- 당첨자 발표 --
+# 치킨 당첨자: 1
+# 커피 당첨자: [2, 3, 4]
+# -- 축하합니다 --
+
+# (활용 예제)
+from random import *
+# lst = [1,2,3,4,5]
+# print(lst)
+# shuffle(lst)
+# print(lst)
+# print(sample(lst, 1))
+
+# reply = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+# print(reply)
+
+# chicken = sample(reply, 1)
+# print(chicken)
+# # reply2 = reply - chicken
+# coffee = sample(reply, 3)
+
+# print("-- 당첨자 발표--")
+# print("치킨 당첨자:", chicken)
+# print("커피 당첨자", coffee)
+# print("--축하합니다--")
+
+# Answer
+
+from random import *
+users = range(1,21) # 1부터 21 직전(20)까지 숫자를 생성, 하지만 타입이 range이기 때문에 list의 함수를 쓸 수 없음
+# print(type(users))
+users = list(users)
+# print(type(users))
+
+print(users)
+shuffle(users)
+print(users)
+
+winners = sample(users, 4) # 4명 중에서 1명은 치킨, 3명은 커피
+
+print("-- 당첨자 발표--")
+print("치킨 당첨자: {0}" .format(winners[0]))
+print("커피 당첨자: {0}" .format(winners[1:]))
+print("--축하합니다--")
+
+# if () (1:57:33)
