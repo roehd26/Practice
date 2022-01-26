@@ -530,7 +530,7 @@
 # -- 축하합니다 --
 
 # (활용 예제)
-from random import *
+# from random import *
 # lst = [1,2,3,4,5]
 # print(lst)
 # shuffle(lst)
@@ -542,7 +542,7 @@ from random import *
 
 # chicken = sample(reply, 1)
 # print(chicken)
-# # reply2 = reply - chicken
+# # reply2 = reply - chicken # 원래 문자열에서 선택한 내용을 어떻게 제외 하는지?
 # coffee = sample(reply, 3)
 
 # print("-- 당첨자 발표--")
@@ -552,21 +552,207 @@ from random import *
 
 # Answer
 
-from random import *
-users = range(1,21) # 1부터 21 직전(20)까지 숫자를 생성, 하지만 타입이 range이기 때문에 list의 함수를 쓸 수 없음
-# print(type(users))
-users = list(users)
-# print(type(users))
+# from random import *
+# users = range(1,21) # 1부터 21 직전(20)까지 숫자를 생성, 하지만 타입이 range이기 때문에 list의 함수를 쓸 수 없음
+# # print(type(users))
+# users = list(users)
+# # print(type(users))
 
-print(users)
-shuffle(users)
-print(users)
+# print(users)
+# shuffle(users)
+# print(users)
 
-winners = sample(users, 4) # 4명 중에서 1명은 치킨, 3명은 커피
+# winners = sample(users, 4) # 4명 중에서 1명은 치킨, 3명은 커피
 
-print("-- 당첨자 발표--")
-print("치킨 당첨자: {0}" .format(winners[0]))
-print("커피 당첨자: {0}" .format(winners[1:]))
-print("--축하합니다--")
+# print("-- 당첨자 발표--")
+# print("치킨 당첨자: {0}" .format(winners[0]))
+# print("커피 당첨자: {0}" .format(winners[1:]))
+# print("--축하합니다--")
 
 # if () (1:57:33)
+
+# weather = "미세먼지"
+# if 조건:
+#     실행 명령문
+
+# weather = input("오늘 날씨는 어때요? ")
+
+# if weather == "비" or weather =="눈":
+#     print("우산을 챙기세요")
+# elif weather == "미세먼지":
+#     print("마스크를 챙기세요")
+# else:
+#     print("준비물 필요 없어요.")
+
+# temp = int(input("기온은 어때요?"))
+# if 30<= temp:
+#     print("너무 더워요. 나가지 마세요")
+# elif 10 <= temp and temp <30:
+#     print("괜찮은 날씨에요")
+# elif 0 <= temp and temp < 10:
+#     print("외투를 챙기세요")
+# else:
+#     print("너무 추워요. 나가지 마세요")
+
+# for () (2:05:11)
+
+# print("대기번호: 1")
+# print("대기번호: 2")
+# print("대기번호: 3")
+# print("대기번호: 4")
+
+# randrange() 참고
+# for waiting_no in range(1, 6): # 1,2,3,4,5 - 6 직전까지
+#     print("대기번호: {0}".format(waiting_no))
+
+# starbucks = ["아이언맨", "토르", "아이엠 그루트"]
+# for customer in starbucks:
+#     print("{0} 커피가 준비 되었습니다.".format(customer))
+
+# while () (2:09:33)
+
+# customer = "토르"
+# index = 5
+# while index >= 1:
+#     print("{0}, 커피가 준비 되었습니다. {1} 번 남았어요".format(customer, index))
+#     index -= 1
+#     if index == 0:
+#         print("커피는 폐기 처분 되었습니다.")
+
+# # 무한 루프에 빠지는 경우 - 빠져 나오기 위해서는 Ctrl + C 누름
+# customer = "아이언맨"
+# index = 1
+# while True:
+#     print("{0}, 커피가 준비 되었습니다. 호출 {1}회".format(customer, index))
+#     index += 1
+
+# customer = "토르"
+# person = "Unknown"
+
+# while person != customer:
+#     print("{0}, 커피가 준비 되었습니다.".format(customer))
+#     person = input("이름이 어떻게 되세요?")
+
+# continue 와 break () (2:15:00)
+
+# 수업중 순서대로 책을 읽고 있는데 2, 5번 학생이 결석인 경우
+# absent = [2, 5] # 결석
+# no_book = [7] # 책을 깜빡했음
+# for student in range(1, 11): #1,2,3,4,5,6,7,8,9,10
+#     if student in absent:
+#         continue # continue 이후의 명령을 더이상 실행시키지 않고, 다음 반복 조건으로 계속 진행
+#     elif student in no_book:
+#         print("오늘 수업 여기까지. {0}는 교무실로 따라와".format(student))
+#         break # break는 지금 상황에서 바로 반복문을 종료
+#     print("{0}, 책을 읽어봐".format(student))
+
+# 한 줄 for () (2:19:11)
+
+# 출석 번호가 원래 1 2 3 4 이지만, 앞에 100을 붙이기로 함 -> 101, 102, 103, 104
+# student = [1,2,3,4,5]
+# print(student)
+# student = [i+100 for i in student] # i에 100을 더한 값을 넣을텐데, i는 student에 있는 값을 하나씩 불러오면서, 거기에 100을 더한 값을 리스트로 바꿔서 student에 저장
+# print(student)
+
+# 학생 이름을 길이로 변환
+# students = ["Iron man", "Thor", "I am groot"]
+# students = [len(i) for i in students]
+# print(students)
+
+# 학생 이름을 대문자로 변환
+# students = ["Iron man", "Thor", "I am groot"]
+# students = [i.upper() for i in students]
+# print(students)
+
+# 퀴즈 #5
+# Quiz) 당신은 Cocoa 서비스를 이용하는 택시 기사님입니다.
+# 50명의 승객과 매칭 기회가 있을 때, 총 탑승 승객 수를 구하는 프로그램을 작성하시오.
+
+# 조건 1: 승객별 운행 소요 시간은 5분 ~ 50분 사이의 난수로 정해집니다.
+# 조건 2: 당신은 소요시간 5분 ~ 15분 사이의 승객만 매칭 해야 합니다.
+
+# (출력문 예제)
+# [O] 1번째 손님 (소요시간: 15분)
+# [ ] 2번째 손님 (소요시간: 50분)
+# [O] 3번째 손님 (소요시간: 5분)
+# ...
+# [ ] 50번째 손님 (소요시간: 16분)
+
+# 총 탑승 승객: 2 분
+
+# from random import *
+# customer = range(1,51)
+# customer = list(customer)
+# # print(customer, type(customer))
+
+# # time = randrange(5,51)
+# # print(time, type(time))
+
+# total = 0
+
+# for cust in customer:
+#     time = randrange(5,51)
+#     if time >= 5 and time <= 15 :
+#         total += 1
+#         print("[O] {0}번째 손님 (소요시간: {1}분)".format(cust, time))
+#     else:
+#         print("[ ] {0}번쨰 손님 (소요시간: {1}분)".format(cust, time))
+# print("총 탑승 승객: {0} 분".format(total))
+
+# # range로 난수 생성시 자료 타입은 range -> list로 바꿔줘야 하고, randrange로 난수 생성시는 int형으로 바로 비교 연산 할 수 있음
+
+# # Answer
+
+# from random import *
+# cnt = 0 # 총 탑승 승객 수
+# for i in range(1, 51): # 1~50 이라는 수 (승객)
+#     time = randrange(5, 51) # 5분 ~ 50분 소요 시간
+#     if 5 <= time <= 15: # 5분 ~ 15분 이내의 손님(매칭 성공), 탑숭 승객 수 증가 처리
+#         print("[O] {0}번쨰 손님 (소요시간: {1}분".format(i, time))
+#         cnt += 1
+#     else: # 매칭 실패한 경우
+#         print("[ ] {0}번쨰 손님 (소요시간: {1}분".format(i, time))
+
+# print("총 탑승 승객: {0} 분".format(cnt))
+
+# 함수 () (2:28:35)
+
+# def open_account(): # 함수 정의 시에는 "def + 함수 이름() + :"
+#     print("새로운 계좌가 생성 되었습니다.")
+
+# # 함수는 정의만 해 두는 것으로 실제로 호출 하기 전까지는 실행 하지 않는다.
+
+# open_account() # 함수 호출
+
+# 전달값과 반환값 () (2:30:10)
+
+def open_account(): # 함수 정의 시에는 "def + 함수 이름() + :"
+    print("새로운 계좌가 생성 되었습니다.")
+
+def deposit(balance, money): # 입금
+    print("입금이 완료 되었습니다. 잔액은 {0} 원 입니다.".format(balance + money))
+    return balance + money
+
+def withdraw(balance, money): # 출금
+    if balance >= money: # 잔액이 출금보다 많으면
+        print("출금이 완료되었습니다. 잔액은 {0} 원 입니다.".format(balance - money))
+        return balance - money
+    else:
+        print("출금이 완료되지 않았습니다. 잔액은 {0} 원 입니다.".format(balance))
+        return balance
+
+def withdraw_night(balance, money): #저녁에 출금
+    commission = 100 # 수수료 100원
+    return commission, balance - money - commission # 여러개의 값을 튜플 형식으로 반환
+
+balance = 0 # 잔액
+balance = deposit(balance, 1000)
+# balance = withdraw(balance, 2000)
+# balance = withdraw(balance, 500)
+commission, balance = withdraw_night(balance, 500)
+print("수수료 {0} 원이며, 잔액은 {1} 원 입니다.".format(commission, balance))
+
+# 기본값 () (2:37:50)
+
+
+
